@@ -1,0 +1,358 @@
+:root {
+    --primary: #FF6B6B;
+    --background: #0A0A0A;
+    --text: #FFFFFF;
+    --secondary: #2A2A2A;
+    --accent: #FFB86C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    margin-left: 2rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+.sign-up {
+    background: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    opacity: 1 !important;
+}
+
+main {
+    padding: 8rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.new-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    color: var(--primary);
+}
+
+.title-animation {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.title-animation span {
+    display: block;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 3rem;
+}
+
+.prompt-container {
+    background: var(--secondary);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prompt-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.prompt-box::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 20px;
+    background: var(--primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    filter: blur(20px);
+    z-index: -1;
+}
+
+.prompt-box.typing::after {
+    opacity: 0.2;
+}
+
+.prompt-prefix {
+    opacity: 0.6;
+}
+
+.cursor {
+    width: 2px;
+    height: 24px;
+    background: var(--primary);
+    margin-left: 8px;
+    animation: blink 1s infinite;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.controls button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.controls button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.features {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.feature-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.feature-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.testimonial {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quote {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.social-proof {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.users {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.rating {
+    color: var(--accent);
+    margin-top: 0.5rem;
+}
+
+.press-logo {
+    height: 30px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+.product-hunt {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.floating-shapes {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.1;
+}
+
+.circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: var(--primary);
+    top: 10%;
+    left: 10%;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background: var(--accent);
+    top: 60%;
+    right: 15%;
+    transform: rotate(45deg);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 260px solid var(--primary);
+    top: 40%;
+    left: 60%;
+    opacity: 0.05;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Showcase styles */
+.showcase-container {
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.component-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
+}
+
+.component-preview {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.demo-component {
+    background: var(--secondary);
+    border-radius: 12px;
+    width: 280px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.demo-header {
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+}
+
+.demo-content {
+    padding: 1rem;
+}
+
+.demo-line {
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+}
+
+.demo-line:last-child {
+    margin-bottom: 0;
+}
+
+/* Component States */
+.demo-component.vertical {
+    height: 400px;
+    width: 280px;
+}
+
+.demo-component.horizontal {
+    height: 200px;
+    width: 500px;
+}
+
+.demo-component.compact {
+    height: 200px;
+    width: 200px;
+}
+
+.demo-component.expanded {
+    height: 400px;
+    width: 500px;
+}
+
+/* Animation states */
+.showcase-input.typing {
+    border-color: var(--primary);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.component-card.floating {
+    animation: float 3s ease-in-out infinite;
+} 
