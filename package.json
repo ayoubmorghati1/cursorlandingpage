@@ -14,7 +14,9 @@
     "lib"
   ],
   "scripts": {
-    "build": "node build"
+    "build": "node build",
+    "start": "http-server .",
+    "dev": "http-server ."
   },
   "bugs": {
     "url": "https://github.com/juliangarnier/anime/issues"
